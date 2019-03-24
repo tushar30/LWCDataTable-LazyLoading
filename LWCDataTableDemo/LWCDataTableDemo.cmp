@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+  <aura:attribute name="recordIds" type="List" description="Store record Id" default="[]"/>
+    
+   <c:lwcDataTable objectApiName="Contact" fieldNamesStr="Name,Title,Email,Phone"
+   inlineEdit="true" colAction="true" onselected="{!c.selectedRecords}"/>
+   <br/> <br/> Selected Rows: <br/> <br/>
+    <aura:iteration items="{!v.recordIds}" var="item">
+        {!item}<br/>
+    </aura:iteration>
+</aura:component>
